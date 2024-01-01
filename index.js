@@ -2,6 +2,7 @@
 
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
+const { alias } = require('yargs');
 
 const date = new Date()
 
@@ -77,14 +78,7 @@ const argv = yargs(hideBin(process.argv))
 		(yargs) => current(yargs),
 		(argv) => getDate(argv, x = -1)
 	)
-	.option('current', {
-		aliac: 'ДатаISO',
-		description: 'Текущая дата в формате ISO'
-	})
-	.option('y', {
-		aliac: 'ГодISO',
-		description: 'Текущий год в формате ISO'
-	})
 
 	.argv
 
+	console.log(argv);
