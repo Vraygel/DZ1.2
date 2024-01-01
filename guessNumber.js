@@ -60,9 +60,6 @@ let guess = () => rl.question(`Введите число от ${minNum} до ${m
 	}
 });
 
-
-
-
 function randomNum(min, max) {
 	console.log(min);
 	console.log(max);

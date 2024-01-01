@@ -2,14 +2,12 @@
 
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
-// const { getDay, getMonth, calculateDate } = require('yargs/helpers');
 
 const date = new Date()
 
-// getFullYear()
 
 function current(yargs) {
-	// console.log(argv.year)	
+
 	return yargs
 		.option('y', {
 			alias: 'year',
@@ -60,7 +58,6 @@ function getDate(argv, x) {
 	console.log(argv);
 }
 
-
 const argv = yargs(hideBin(process.argv))
 	.command(
 		'current',
@@ -80,30 +77,6 @@ const argv = yargs(hideBin(process.argv))
 		(yargs) => current(yargs),
 		(argv) => getDate(argv, x = -1)
 	)
-	// .command(
-	// 'current',
-	// 'Получение текущей даты в формате ISO',
-	// function name(params) {
-	// 	console.log(date.toISOString());
-	// })
-	// .command(
-	// 	'сurrent <-y>',
-	// 	'Получение текущего года в формате ISO',
-	// 	function name(params) {
-	// 		console.log(date.getFullYear());
-	// 	})
-	// 	.command(
-	// 		'current [-m]',
-	// 		'Получение текущего месяца в формате ISO',
-	// 		function name(params) {
-	// 			console.log(date.getMonth() + 1);
-	// 		})
-	// .command(
-	// 	'current [-d]',
-	// 	'Получение текущего дня месяца в формате ISO',
-	// 	function name(params) {
-	// 		console.log(date.getDate());
-	// 	})
 	.option('current', {
 		aliac: 'ДатаISO',
 		description: 'Текущая дата в формате ISO'
@@ -112,16 +85,6 @@ const argv = yargs(hideBin(process.argv))
 		aliac: 'ГодISO',
 		description: 'Текущий год в формате ISO'
 	})
-
-	// 	.option('m', {
-	// 		aliac: 'МесяцISO',
-	// 		description: 'Текущий месяц в формате ISO'
-	// 	})
-	// 	.option('d', {
-	// 		aliac: 'ДеньISO',
-	// 		description: 'Текущий день месяца в формате ISO'
-	// 	})
-
 
 	.argv
 
